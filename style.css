@@ -29,10 +29,11 @@
   margin-bottom: 90px;
 }
 
-.facebook-page h1 {
+.facebook-page h2 {
   color: #1877f2;
-  font-size: 4rem;
+  font-size: 65px;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .facebook-page p {
@@ -137,6 +138,23 @@ hr {
   background: #3ba626;
 }
 
+.loginButton {
+  background-color: #1877f2;
+  border: none;
+  border-radius: 6px;
+  font-size: 20px;
+  line-height: 48px;
+  padding: 0 16px;
+  width: 100%;
+  color: white;
+  font-weight: 500;
+  margin-bottom: 0px;
+}
+
+#errorMessage {
+  font-size: 13px;
+}
+
 @media (max-width: 900px) {
   .facebook-page {
     flex-direction: column;
@@ -159,5 +177,11 @@ hr {
 
   form {
     padding: 15px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .text p {
+    display: none;
   }
 }

